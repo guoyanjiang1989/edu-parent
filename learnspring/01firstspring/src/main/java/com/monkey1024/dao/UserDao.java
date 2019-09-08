@@ -4,4 +4,5 @@ public interface UserDao {
 
     void addUser();
     void deleteUser();
+    void selectUser();
 }
