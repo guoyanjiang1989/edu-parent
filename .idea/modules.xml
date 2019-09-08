@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/learnspring/00_pattern/src/main/main.iml" filepath="$PROJECT_DIR$/learnspring/00_pattern/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learnmybatis/01learnmybatis/src/main/main1.iml" filepath="$PROJECT_DIR$/learnmybatis/01learnmybatis/src/main/main1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learnspringmvc/06redirect/src/main/main2.iml" filepath="$PROJECT_DIR$/learnspringmvc/06redirect/src/main/main2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learnmybatis/01firstmybatis/src/main/main3.iml" filepath="$PROJECT_DIR$/learnmybatis/01firstmybatis/src/main/main3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learnspring/01firstspring/src/main/main4.iml" filepath="$PROJECT_DIR$/learnspring/01firstspring/src/main/main4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learnspring/03thirdspring/src/main/main5.iml" filepath="$PROJECT_DIR$/learnspring/03thirdspring/src/main/main5.iml" />
+    </modules>
+  </component>
+</project>

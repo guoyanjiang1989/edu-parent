@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/learnspringmvc/06redirect/target/06redirect/WEB-INF/lib/spring-webmvc-5.1.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/learnspringmvc/06redirect/target/06redirect/WEB-INF/lib/spring-aop-5.1.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/learnspringmvc/06redirect/target/06redirect/WEB-INF/lib/spring-expression-5.1.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/learnspringmvc/06redirect/target/06redirect/WEB-INF/lib/spring-jcl-5.1.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/learnspringmvc/06redirect/target/06redirect/WEB-INF/lib/spring-core-5.1.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/learnspringmvc/06redirect/target/06redirect/WEB-INF/lib/spring-context-5.1.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/learnspringmvc/06redirect/target/06redirect/WEB-INF/lib/spring-beans-5.1.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/learnspringmvc/06redirect/target/06redirect/WEB-INF/lib/spring-web-5.1.8.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
