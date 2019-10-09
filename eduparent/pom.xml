@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.gyj</groupId>
+    <artifactId>edu-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>edu-domain</module>
+        <module>edu-dao</module>
+        <module>edu-service</module>
+        <module>edu-web</module>
+    </modules>
+
+    <packaging>pom</packaging>
+
+    <!--版本号-->
+    <properties>
+        <junit.version>4.11</junit.version>
+        <spring.version>5.1.9.RELEASE</spring.version>
+        <mybatis.version>3.5.1</mybatis.version>
+        <mysql.version>5.1.47</mysql.version>
+        <c3p0.version>0.9.5.3</c3p0.version>
+        <jstl.version>1.2</jstl.version>
+        <taglibs.version>1.1.2</taglibs.version>
+        <log4j.version>1.2.17</log4j.version>
+        <slf4j.version>1.7.27</slf4j.version>
+        <mybatis-spring.version>2.0.1</mybatis-spring.version>
+        <mybatis-generator.version>1.3.7</mybatis-generator.version>
+        <servlet.version>4.0.1</servlet.version>
+        <jsp.version>2.3.3</jsp.version>
+        <pagehelper.version>5.1.9</pagehelper.version>
+    </properties>
+    <!--依赖-->
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>
