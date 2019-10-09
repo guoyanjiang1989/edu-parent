@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gyj.edu.dao.StudentMapper">
+  <resultMap id="BaseResultMap" type="com.gyj.edu.bean.Student">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="chinese_name" jdbcType="VARCHAR" property="chineseName" />
+    <result column="english_name" jdbcType="VARCHAR" property="englishName" />
+    <result column="id_number" jdbcType="VARCHAR" property="idNumber" />
+    <result column="gender" jdbcType="CHAR" property="gender" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="registered_address" jdbcType="VARCHAR" property="registeredAddress" />
+    <result column="second_contact_name" jdbcType="VARCHAR" property="secondContactName" />
+    <result column="second_contact_phone" jdbcType="VARCHAR" property="secondContactPhone" />
+    <result column="degree" jdbcType="VARCHAR" property="degree" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_student
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.gyj.edu.bean.Student">
+    insert into t_student (id, chinese_name, english_name, 
+      id_number, gender, phone, 
+      address, registered_address, second_contact_name, 
+      second_contact_phone, degree, username, 
+      password)
+    values (#{id,jdbcType=VARCHAR}, #{chineseName,jdbcType=VARCHAR}, #{englishName,jdbcType=VARCHAR}, 
+      #{idNumber,jdbcType=VARCHAR}, #{gender,jdbcType=CHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{registeredAddress,jdbcType=VARCHAR}, #{secondContactName,jdbcType=VARCHAR}, 
+      #{secondContactPhone,jdbcType=VARCHAR}, #{degree,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.gyj.edu.bean.Student">
+    update t_student
+    set chinese_name = #{chineseName,jdbcType=VARCHAR},
+      english_name = #{englishName,jdbcType=VARCHAR},
+      id_number = #{idNumber,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=CHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      registered_address = #{registeredAddress,jdbcType=VARCHAR},
+      second_contact_name = #{secondContactName,jdbcType=VARCHAR},
+      second_contact_phone = #{secondContactPhone,jdbcType=VARCHAR},
+      degree = #{degree,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, chinese_name, english_name, id_number, gender, phone, address, registered_address, 
+    second_contact_name, second_contact_phone, degree, username, password
+    from t_student
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, chinese_name, english_name, id_number, gender, phone, address, registered_address, 
+    second_contact_name, second_contact_phone, degree, username, password
+    from t_student
+  </select>
+</mapper>

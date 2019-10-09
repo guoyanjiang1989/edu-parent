@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gyj.edu.dao.SalaryDetailMapper">
+  <resultMap id="BaseResultMap" type="com.gyj.edu.bean.SalaryDetail">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="total_salary" jdbcType="DECIMAL" property="totalSalary" />
+    <result column="social_salary" jdbcType="DECIMAL" property="socialSalary" />
+    <result column="house_salary" jdbcType="DECIMAL" property="houseSalary" />
+    <result column="tax" jdbcType="DECIMAL" property="tax" />
+    <result column="basic_salary" jdbcType="DECIMAL" property="basicSalary" />
+    <result column="reward_money" jdbcType="DECIMAL" property="rewardMoney" />
+    <result column="punish_money" jdbcType="DECIMAL" property="punishMoney" />
+    <result column="help_money" jdbcType="DECIMAL" property="helpMoney" />
+    <result column="actual_money" jdbcType="DECIMAL" property="actualMoney" />
+    <result column="emp_id" jdbcType="INTEGER" property="empId" />
+    <result column="salary_date" jdbcType="TIMESTAMP" property="salaryDate" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_salary_detail
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.gyj.edu.bean.SalaryDetail">
+    insert into t_salary_detail (id, total_salary, social_salary, 
+      house_salary, tax, basic_salary, 
+      reward_money, punish_money, help_money, 
+      actual_money, emp_id, salary_date
+      )
+    values (#{id,jdbcType=VARCHAR}, #{totalSalary,jdbcType=DECIMAL}, #{socialSalary,jdbcType=DECIMAL}, 
+      #{houseSalary,jdbcType=DECIMAL}, #{tax,jdbcType=DECIMAL}, #{basicSalary,jdbcType=DECIMAL}, 
+      #{rewardMoney,jdbcType=DECIMAL}, #{punishMoney,jdbcType=DECIMAL}, #{helpMoney,jdbcType=DECIMAL}, 
+      #{actualMoney,jdbcType=DECIMAL}, #{empId,jdbcType=INTEGER}, #{salaryDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.gyj.edu.bean.SalaryDetail">
+    update t_salary_detail
+    set total_salary = #{totalSalary,jdbcType=DECIMAL},
+      social_salary = #{socialSalary,jdbcType=DECIMAL},
+      house_salary = #{houseSalary,jdbcType=DECIMAL},
+      tax = #{tax,jdbcType=DECIMAL},
+      basic_salary = #{basicSalary,jdbcType=DECIMAL},
+      reward_money = #{rewardMoney,jdbcType=DECIMAL},
+      punish_money = #{punishMoney,jdbcType=DECIMAL},
+      help_money = #{helpMoney,jdbcType=DECIMAL},
+      actual_money = #{actualMoney,jdbcType=DECIMAL},
+      emp_id = #{empId,jdbcType=INTEGER},
+      salary_date = #{salaryDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, total_salary, social_salary, house_salary, tax, basic_salary, reward_money, 
+    punish_money, help_money, actual_money, emp_id, salary_date
+    from t_salary_detail
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, total_salary, social_salary, house_salary, tax, basic_salary, reward_money, 
+    punish_money, help_money, actual_money, emp_id, salary_date
+    from t_salary_detail
+  </select>
+</mapper>

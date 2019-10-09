@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gyj.edu.dao.DepartmentMapper">
+  <resultMap id="BaseResultMap" type="com.gyj.edu.bean.Department">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="depno" jdbcType="VARCHAR" property="depno" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="build_date" jdbcType="TIMESTAMP" property="buildDate" />
+    <result column="pid" jdbcType="VARCHAR" property="pid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_department
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.gyj.edu.bean.Department">
+    insert into t_department (id, name, depno, 
+      createtime, build_date, pid
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{depno,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{buildDate,jdbcType=TIMESTAMP}, #{pid,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.gyj.edu.bean.Department">
+    update t_department
+    set name = #{name,jdbcType=VARCHAR},
+      depno = #{depno,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      build_date = #{buildDate,jdbcType=TIMESTAMP},
+      pid = #{pid,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, name, depno, createtime, build_date, pid
+    from t_department
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name, depno, createtime, build_date, pid
+    from t_department
+  </select>
+</mapper>

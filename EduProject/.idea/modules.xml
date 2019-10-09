@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/commonparent/commonparent.iml" filepath="$PROJECT_DIR$/commonparent/commonparent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonparent/edu-bean/edu-bean.iml" filepath="$PROJECT_DIR$/commonparent/edu-bean/edu-bean.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonparent/edu-dao/edu-dao.iml" filepath="$PROJECT_DIR$/commonparent/edu-dao/edu-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonparent/edu-manager/edu-manager.iml" filepath="$PROJECT_DIR$/commonparent/edu-manager/edu-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonparent/edu-service/edu-service.iml" filepath="$PROJECT_DIR$/commonparent/edu-service/edu-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonparent/test/test.iml" filepath="$PROJECT_DIR$/commonparent/test/test.iml" />
+    </modules>
+  </component>
+</project>

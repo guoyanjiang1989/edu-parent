@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gyj.edu.dao.CourseMapper">
+  <resultMap id="BaseResultMap" type="com.gyj.edu.bean.Course">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="course_name" jdbcType="VARCHAR" property="courseName" />
+    <result column="course_time" jdbcType="VARCHAR" property="courseTime" />
+    <result column="course_price" jdbcType="DECIMAL" property="coursePrice" />
+    <result column="course_address" jdbcType="VARCHAR" property="courseAddress" />
+    <result column="teacher_name" jdbcType="VARCHAR" property="teacherName" />
+    <result column="expected_startdate" jdbcType="TIMESTAMP" property="expectedStartdate" />
+    <result column="expected_enddate" jdbcType="TIMESTAMP" property="expectedEnddate" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_course
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gyj.edu.bean.Course">
+    insert into t_course (id, course_name, course_time, 
+      course_price, course_address, teacher_name, 
+      expected_startdate, expected_enddate)
+    values (#{id,jdbcType=INTEGER}, #{courseName,jdbcType=VARCHAR}, #{courseTime,jdbcType=VARCHAR}, 
+      #{coursePrice,jdbcType=DECIMAL}, #{courseAddress,jdbcType=VARCHAR}, #{teacherName,jdbcType=VARCHAR}, 
+      #{expectedStartdate,jdbcType=TIMESTAMP}, #{expectedEnddate,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.gyj.edu.bean.Course">
+    update t_course
+    set course_name = #{courseName,jdbcType=VARCHAR},
+      course_time = #{courseTime,jdbcType=VARCHAR},
+      course_price = #{coursePrice,jdbcType=DECIMAL},
+      course_address = #{courseAddress,jdbcType=VARCHAR},
+      teacher_name = #{teacherName,jdbcType=VARCHAR},
+      expected_startdate = #{expectedStartdate,jdbcType=TIMESTAMP},
+      expected_enddate = #{expectedEnddate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, course_name, course_time, course_price, course_address, teacher_name, 
+    expected_startdate, expected_enddate
+    from t_course
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, course_name, course_time, course_price, course_address, teacher_name, 
+    expected_startdate, expected_enddate
+    from t_course
+  </select>
+</mapper>

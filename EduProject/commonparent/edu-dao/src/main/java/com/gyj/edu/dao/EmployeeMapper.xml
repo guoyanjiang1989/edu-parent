@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gyj.edu.dao.EmployeeMapper">
+  <resultMap id="BaseResultMap" type="com.gyj.edu.bean.Employee">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="chinese_name" jdbcType="VARCHAR" property="chineseName" />
+    <result column="english_name" jdbcType="VARCHAR" property="englishName" />
+    <result column="joined_date" jdbcType="TIMESTAMP" property="joinedDate" />
+    <result column="salary" jdbcType="DECIMAL" property="salary" />
+    <result column="position_level" jdbcType="INTEGER" property="positionLevel" />
+    <result column="department_id" jdbcType="VARCHAR" property="departmentId" />
+    <result column="deltag" jdbcType="CHAR" property="deltag" />
+    <result column="leave_date" jdbcType="TIMESTAMP" property="leaveDate" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_employee
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gyj.edu.bean.Employee">
+    insert into t_employee (id, chinese_name, english_name, 
+      joined_date, salary, position_level, 
+      department_id, deltag, leave_date
+      )
+    values (#{id,jdbcType=INTEGER}, #{chineseName,jdbcType=VARCHAR}, #{englishName,jdbcType=VARCHAR}, 
+      #{joinedDate,jdbcType=TIMESTAMP}, #{salary,jdbcType=DECIMAL}, #{positionLevel,jdbcType=INTEGER}, 
+      #{departmentId,jdbcType=VARCHAR}, #{deltag,jdbcType=CHAR}, #{leaveDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.gyj.edu.bean.Employee">
+    update t_employee
+    set chinese_name = #{chineseName,jdbcType=VARCHAR},
+      english_name = #{englishName,jdbcType=VARCHAR},
+      joined_date = #{joinedDate,jdbcType=TIMESTAMP},
+      salary = #{salary,jdbcType=DECIMAL},
+      position_level = #{positionLevel,jdbcType=INTEGER},
+      department_id = #{departmentId,jdbcType=VARCHAR},
+      deltag = #{deltag,jdbcType=CHAR},
+      leave_date = #{leaveDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, chinese_name, english_name, joined_date, salary, position_level, department_id, 
+    deltag, leave_date
+    from t_employee
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, chinese_name, english_name, joined_date, salary, position_level, department_id, 
+    deltag, leave_date
+    from t_employee
+  </select>
+</mapper>
